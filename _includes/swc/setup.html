@@ -1,14 +1,16 @@
+{% comment %}
 {% assign curricula = "swc-gapminder|swc-inflammation"  | split: "|" %}
 {% unless curricula contains site.curriculum %}
 {% include warning-curriculum.html %}
 {% endunless %}
+{% endcomment %}
 
-{% comment %}
+
 {% include install_instructions/shell.html %}
 {% include install_instructions/git.html %}
 {% include install_instructions/editor.html %}
-{% endcomment %}
 
+{% comment %}
 {% if site.flavor == "r" %}
 {% include install_instructions/r.html %}
 {% elsif site.flavor == "python" %}
@@ -19,6 +21,7 @@
 {% else %}
 {% include warning-flavor.html %}
 {% endif %}
+{% endcomment %}
 
 {% comment %}
 The following setup instructions are commented out because Carpentries workshops
